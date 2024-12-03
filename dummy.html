@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #4CAF50;
+        }
+        .fact {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Random Fact</h1>
+        <p class="fact" id="fact-display">Click the button below to get a random fact!</p>
+        <button onclick="showRandomFact()">Get Fact</button>
+    </div>
+
+    <script>
+        const facts = [
+            "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.",
+            "Bananas are berries, but strawberries aren't. This is due to the botanical definitions of a berry.",
+            "Octopuses have three hearts. Two pump blood to the gills, while one pumps it to the rest of the body.",
+            "A group of flamingos is called a 'flamboyance'.",
+            "The Eiffel Tower can grow taller by up to 6 inches in the summer due to the expansion of iron in the heat.",
+            "Cows have best friends and can become stressed when they are separated.",
+            "A day on Venus is longer than a year on Venus. It takes 243 Earth days to rotate once, but only 225 Earth days to orbit the Sun.",
+            "Cleopatra lived closer in time to the first moon landing than to the building of the Great Pyramid of Giza.",
+            "Sharks have been around longer than trees. Sharks appeared around 400 million years ago, while trees appeared about 350 million years ago."
+        ];
+
+        function showRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const factElement = document.getElementById('fact-display');
+            factElement.textContent = facts[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
